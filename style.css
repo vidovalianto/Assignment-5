@@ -5,3 +5,16 @@ html, body {
 canvas {
   display: block;
 }
+
+#anim {
+    max-width:100%;
+    max-height:100%;
+    object-fit: contain;
+/*    margin: auto;*/
+}
+
+button {
+  border-radius: 25px;
+  border; 0px;
+  padding: 20px;
+}
