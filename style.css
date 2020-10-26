@@ -14,7 +14,48 @@ canvas {
 }
 
 button {
+  background: #C5E204;
   border-radius: 25px;
-  border; 0px;
-  padding: 20px;
+  border: 0px;
+  padding: 15px;
+  Font-Family: 'Open Sans', Sans-Serif;
+  Font-Size: 12px;
+  font-weight: bold;
+  color: black;
 }
+
+label {
+  Font-Family: 'Open Sans', Sans-Serif;
+  Font-Size: 12px;
+    padding:10px;
+}
+
+input[type='radio']:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #D8D8D8;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+    }
+
+    input[type='radio']:checked:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #C5E204;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+    }
+
+

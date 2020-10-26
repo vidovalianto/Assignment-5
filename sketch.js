@@ -10,12 +10,16 @@ const bottomPad = 50
 let sounds = []
 let curWeather = -1
 
+let heroFont
+
 function preload() {
   soundFormats('mp3', 'ogg');
 
   sounds.push(loadSound('Sound/sunny.mp3'))
   sounds.push(loadSound('Sound/cloudy.mp3'))
   sounds.push(loadSound('Sound/rain.mp3'))
+    
+  heroFont = loadFont('fonts/Raleway/Raleway-SemiBold.ttf')
 }
 
 function setup() {
@@ -33,10 +37,10 @@ function draw() {
   
   sliderVal = slider.value()
   radioVal = radio.value()
-  textSize(min(width,height)/10);
-  radio.position(width/2 - 50, height*2/3)
-  button.position(width/2 - 80, height*4/5)
-  slider.position(width/2 - 50, height*3/4)
+  
+  radio.position(width/2 - 70, height*1/4 + height/50)
+  button.position(width/2 - 60, height*4/5)
+  slider.position(width/2 - 60, height*3/4)
   
   const wpos = {
     x: width/2,
@@ -44,6 +48,9 @@ function draw() {
     size: min(width,height)/5
   }
   
+  fill(0)
+    textSize(min(width,height)/30);
+  textFont(heroFont)
   text(dummyDatas[sliderVal].name, width/2, height/2 - height/3 - min(width,height)/20)
     if (radioVal == options[0]) {
         tempCard(dummyDatas[sliderVal], wpos)
@@ -96,15 +103,14 @@ function drawSlider() {
 function valChange() {
     sounds.forEach((sound) => sound.stop())
         if (curWeather[0]) {
-          sounds[0].play()
+          sounds[0].loop()
       } else {
           if (curWeather[2]) {
-            sounds[2].play()
+            sounds[2].loop()
           } else {
-            sounds[1].play()
+            sounds[1].loop()
           }
       }
-    console.log(curWeather)
 }
 
 function genRandomData() {
